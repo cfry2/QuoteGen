@@ -1,0 +1,206 @@
+
+<div class="row">
+<h3>Signage entry</h3>
+<form ng-submit="addSign(newSign)">
+<!--<div ng-model="webInfo">-->
+<input type="text" placeholder="description" ng-model="newSign.description"/>
+<input type="text" placeholder="Quantity" ng-model="newSign.qty" />
+<div class="large-6 columns">
+	<input type="text" placeholder="width" ng-model="newSign.width" />
+</div>
+<div class="large-6 columns">
+	<input type="text" placeholder="height" ng-model="newSign.height" />
+</div>
+
+<div class="large-6 columns">
+	<select ng-model="newSign.m1">
+	<option value="0">-None-</option>
+	<option value="{{otherPrice}}">Other/Custom ({{otherPrice}})</option>
+	<option value="1">-Digital Print Materials-</option>
+	<option value="41.10">4yr Permanent white block out vinyl 1370 wide</option>
+	<option value="42.54">4yr Permanent white block out vinyl 1520 wide</option>
+	<option value="55.58">7yr Permanent white block out vinyl 1370 wide</option>
+	<option value="58.28">7yr Permanent white block out vinyl 1520 wide</option>
+	<option value="89.90">10yr Permanent white block out vinyl 1370 wide</option>
+	<option value="96.45">10yr Permanent white block out vinyl 1520 wide</option>
+	<option value="91.35">7yr Backlit white translucent vinyl 1370 wide</option>
+	<option value="98.09">7yr Backlit white translucent vinyl 1520 wide</option>
+	<option value="44.10">Non woven (non-curl) pull up banner material 914 wide</option>
+	<option value="49.20">Non woven (non-curl) pull up banner material 1370 wide</option>
+	<option value="45.00">Heavy duty single sided block out PVC banner 1600 wide</option>
+	<option value="105.15">One-way-vision film 1370 wide</option>
+	<option value="24.54">5yr Matt laminate with UV protection 1370 wide</option>
+	<option value="27.59">5yr Matt laminate with UV protection 1550 wide</option>
+	<option value="82.11">10yr Anti-Graffiti laminate 1370 wide</option>
+	<option value="105.90">10yr Anti-Graffiti laminate 1520 wide</option>
+	<option value="92.40">Optically clear laminate for One-Way-Vision 1370 wide</option>
+	<option value="105.60">Optically clear laminate for One-Way-Vision 1550 wide</option>
+	<option value="1">-Plotter Films-</option>
+	<option value="24.16">Premium vinyl 610 wide</option>
+	<option value="41.64">Premium vinyl 1220 wide/option>
+	<option value="17.52">Intermediate vinyl 610 wide</option>
+	<option value="29.10">Intermediate vinyl 1220 wide/option>
+	<option value="16.20">Budget vinyl 610 wide</option>
+	<option value="25.44">Budget vinyl 1220 wide</option>
+	<option value="29.56">Translucent or Transparent vinyl 610 wide</option>
+	<option value="53.12">Translucent or Transparent vinyl 1220 wide</option>
+	<option value="1">-Substrates-</option>
+	<option value="66.00">3mm Composite panel 2440 X 1220</option>
+	<option value="12.00">3mm Corflute 2440 X 1220</option>
+	<option value="18.00">5mm Corflute 2440 X 1220</option>
+	<option value="43.20">Colourbond 2440 X 1220</option>
+	<option value="30.00">3mm PVC sheet White 2440 X 1220</option>
+	<option value="60.00">3mm acrylic 2440 X 1220</option>
+</select>
+</div>
+<div class="large-6 columns">
+	<select ng-model="newSign.m2">
+	<option value="0">-None-</option>
+	<option value="{{otherPrice}}">Other/Custom ({{otherPrice}})</option>
+	<option value="1">-Digital Print Materials-</option>
+	<option value="41.10">4yr Permanent white block out vinyl 1370 wide</option>
+	<option value="42.54">4yr Permanent white block out vinyl 1520 wide</option>
+	<option value="55.58">7yr Permanent white block out vinyl 1370 wide</option>
+	<option value="58.28">7yr Permanent white block out vinyl 1520 wide</option>
+	<option value="89.90">10yr Permanent white block out vinyl 1370 wide</option>
+	<option value="96.45">10yr Permanent white block out vinyl 1520 wide</option>
+	<option value="91.35">7yr Backlit white translucent vinyl 1370 wide</option>
+	<option value="98.09">7yr Backlit white translucent vinyl 1520 wide</option>
+	<option value="44.10">Non woven (non-curl) pull up banner material 914 wide</option>
+	<option value="49.20">Non woven (non-curl) pull up banner material 1370 wide</option>
+	<option value="45.00">Heavy duty single sided block out PVC banner 1600 wide</option>
+	<option value="105.15">One-way-vision film 1370 wide</option>
+	<option value="24.54">5yr Matt laminate with UV protection 1370 wide</option>
+	<option value="27.59">5yr Matt laminate with UV protection 1550 wide</option>
+	<option value="82.11">10yr Anti-Graffiti laminate 1370 wide</option>
+	<option value="105.90">10yr Anti-Graffiti laminate 1520 wide</option>
+	<option value="92.40">Optically clear laminate for One-Way-Vision 1370 wide</option>
+	<option value="105.60">Optically clear laminate for One-Way-Vision 1550 wide</option>
+	<option value="1">-Plotter Films-</option>
+	<option value="24.16">Premium vinyl 610 wide</option>
+	<option value="41.64">Premium vinyl 1220 wide/option>
+	<option value="17.52">Intermediate vinyl 610 wide</option>
+	<option value="29.10">Intermediate vinyl 1220 wide/option>
+	<option value="16.20">Budget vinyl 610 wide</option>
+	<option value="25.44">Budget vinyl 1220 wide</option>
+	<option value="29.56">Translucent or Transparent vinyl 610 wide</option>
+	<option value="53.12">Translucent or Transparent vinyl 1220 wide</option>
+	<option value="1">-Substrates-</option>
+	<option value="66.00">3mm Composite panel 2440 X 1220</option>
+	<option value="12.00">3mm Corflute 2440 X 1220</option>
+	<option value="18.00">5mm Corflute 2440 X 1220</option>
+	<option value="43.20">Colourbond 2440 X 1220</option>
+	<option value="30.00">3mm PVC sheet White 2440 X 1220</option>
+	<option value="60.00">3mm acrylic 2440 X 1220</option>
+</select>
+</div>
+<div class="large-6 columns">
+<select ng-model="newSign.p1">
+	<option value="0">-None-</option>
+	<option value="{{otherPrice}}">Other/Custom ({{otherPrice}})</option>
+	<option value="1">-Digital Print Materials-</option>
+	<option value="41.10">4yr Permanent white block out vinyl 1370 wide</option>
+	<option value="42.54">4yr Permanent white block out vinyl 1520 wide</option>
+	<option value="55.58">7yr Permanent white block out vinyl 1370 wide</ption>
+	<option value="58.28">7yr Permanent white block out vinyl 1520 wide</option>
+	<option value="89.90">10yr Permanent white block out vinyl 1370 wide</option>
+	<option value="96.45">10yr Permanent white block out vinyl 1520 wide</option>
+	<option value="91.35">7yr Backlit white translucent vinyl 1370 wide</option>
+	<option value="98.09">7yr Backlit white translucent vinyl 1520 wide</option>
+	<option value="44.10">Non woven (non-curl) pull up banner material 914 wide</option>
+	<option value="49.20">Non woven (non-curl) pull up banner material 1370 wide</option>
+	<option value="45.00">Heavy duty single sided block out PVC banner 1600 wide</option>
+	<option value="105.15">One-way-vision film 1370 wide</option>
+	<option value="24.54">5yr Matt laminate with UV protection 1370 wide</option>
+	<option value="27.59">5yr Matt laminate with UV protection 1550 wide</option>
+	<option value="82.11">10yr Anti-Graffiti laminate 1370 wide</option>
+	<option value="105.90">10yr Anti-Graffiti laminate 1520 wide</option>
+	<option value="92.40">Optically clear laminate for One-Way-Vision 1370 wide</option>
+	<option value="105.60">Optically clear laminate for One-Way-Vision 1550 wide</option>
+	<option value="1">-Plotter Films-</option>
+	<option value="24.16">Premium vinyl 610 wide</option>
+	<option value="41.64">Premium vinyl 1220 wide/option>
+	<option value="17.52">Intermediate vinyl 610 wide</option>
+	<option value="29.10">Intermediate vinyl 1220 wide/option>
+	<option value="16.20">Budget vinyl 610 wide</option>
+	<option value="25.44">Budget vinyl 1220 wide</option>
+	<option value="29.56">Translucent or Transparent vinyl 610 wide</option>
+	<option value="53.12">Translucent or Transparent vinyl 1220 wide</option>
+	<option value="1">-Substrates-</option>
+	<option value="66.00">3mm Composite panel 2440 X 1220</option>
+	<option value="12.00">3mm Corflute 2440 X 1220</option>
+	<option value="18.00">5mm Corflute 2440 X 1220</option>
+	<option value="43.20">Colourbond 2440 X 1220</option>
+	<option value="30.00">3mm PVC sheet White 2440 X 1220</option>
+	<option value="60.00">3mm acrylic 2440 X 1220</option>
+</select>
+</div>
+<div class="large-6 columns">
+<select ng-model="newSign.p2">
+	<option value="0">-None-</option>
+	<option value="{{otherPrice}}">Other/Custom ({{otherPrice}})</option>
+	<option value="1">-Digital Print Materials-</option>
+	<option value="41.10">4yr Permanent white block out vinyl 1370 wide</option>
+	<option value="42.54">4yr Permanent white block out vinyl 1520 wide</option>
+	<option value="55.58">7yr Permanent white block out vinyl 1370 wide</option>
+	<option value="58.28">7yr Permanent white block out vinyl 1520 wide</option>
+	<option value="89.90">10yr Permanent white block out vinyl 1370 wide</option>
+	<option value="96.45">10yr Permanent white block out vinyl 1520 wide</option>
+	<option value="91.35">7yr Backlit white translucent vinyl 1370 wide</option>
+	<option value="98.09">7yr Backlit white translucent vinyl 1520 wide</option>
+	<option value="44.10">Non woven (non-curl) pull up banner material 914 wide</option>
+	<option value="49.20">Non woven (non-curl) pull up banner material 1370 wide</option>
+	<option value="45.00">Heavy duty single sided block out PVC banner 1600 wide</option>
+	<option value="105.15">One-way-vision film 1370 wide</option>
+	<option value="24.54">5yr Matt laminate with UV protection 1370 wide</option>
+	<option value="27.59">5yr Matt laminate with UV protection 1550 wide</option>
+	<option value="82.11">10yr Anti-Graffiti laminate 1370 wide</option>
+	<option value="105.90">10yr Anti-Graffiti laminate 1520 wide</option>
+	<option value="92.40">Optically clear laminate for One-Way-Vision 1370 wide</option>
+	<option value="105.60">Optically clear laminate for One-Way-Vision 1550 wide</option>
+	<option value="1">-Plotter Films-</option>
+	<option value="24.16">Premium vinyl 610 wide</option>
+	<option value="41.64">Premium vinyl 1220 wide/option>
+	<option value="17.52">Intermediate vinyl 610 wide</option>
+	<option value="29.10">Intermediate vinyl 1220 wide/option>
+	<option value="16.20">Budget vinyl 610 wide</option>
+	<option value="25.44">Budget vinyl 1220 wide</option>
+	<option value="29.56">Translucent or Transparent vinyl 610 wide</option>
+	<option value="53.12">Translucent or Transparent vinyl 1220 wide</option>
+	<option value="1">-Substrates-</option>
+	<option value="66.00">3mm Composite panel 2440 X 1220</option>
+	<option value="12.00">3mm Corflute 2440 X 1220</option>
+	<option value="18.00">5mm Corflute 2440 X 1220</option>
+	<option value="43.20">Colourbond 2440 X 1220</option>
+	<option value="30.00">3mm PVC sheet White 2440 X 1220</option>
+	<option value="60.00">3mm acrylic 2440 X 1220</option>
+</select>
+</div>
+<div class="row">
+	<div class="large-6 columns">
+		<input type="text" placeholder="Other Price" ng-model="otherPrice" />
+	</div>
+	<div class="large-6 columns">
+		<input type="text" ng-model="newSign.markUp" placeholder="Markup(%)"/>
+	</div>
+</div>
+
+<div class="large-12 columns">
+	  <label>
+    <input type="radio" ng-model="newSign.option" ng-value="newSign.width">
+    Width
+  </label><br/>
+  <label>
+    <input type="radio" ng-model="newSign.option" ng-value="newSign.height">
+    Height
+  </label><br/>
+</div>
+<input type="text" placeholder="Design time" ng-model="newSign.designTime" />
+<input type="text" placeholder="Production time" ng-model="newSign.productionTime" />
+<input type="text" placeholder="Installation time" ng-model="newSign.installationTime" />
+<textarea placeholder="description" ng-model="newSign.message" ></textarea>
+<button type="submit" class="addEntry">Add Entry</button>
+<!--</div>-->
+</form>
+<button class="modEntry" ng-click="modifySign()">Modify</button>
+</div>

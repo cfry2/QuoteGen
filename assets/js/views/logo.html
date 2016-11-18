@@ -1,0 +1,13 @@
+
+<div class="row">
+<h3>logo entry</h3>
+<form ng-submit="addLogo()">
+<input type="text" placeholder="Logo description" ng-model="newLogo.description"/>
+{{newLogo.description}}
+<input type="text" placeholder="Design time" ng-model="newLogo.designTime" />
+<textarea placeholder="description" ng-model="newLogo.message" ></textarea>
+<button type="submit" class="addEntry">Add Entry</button>
+</form>
+<button class="modEntry" ng-click="modifyLogo()">Modify</button>
+</div>
+

@@ -1,0 +1,166 @@
+  <div class="Container" ng-controller="main">
+
+      <div class="noPrint">
+      <div class="options">
+      <div class="row">
+        <div class="large-5 columns">
+          <h4>Client info</h4>
+          <input type="text" placeholder="Name of Client" ng-model="qName" />
+          <input type="text" placeholder="Organisation" ng-model="qOrg" />
+          <input type="text" placeholder="Quote id" ng-model="qID" />
+          <input type="date" name="Date" ng-model="qDate">
+        </div>
+        <div class="large-7 columns">
+          
+          <h4>Additional Services</h4>
+            <select ng-model="services1">
+              <option value="Logo design">Logo design</option>
+              <option value="Graphic design">Graphic design</option>
+              <option value="Environmental design">Environmental design</option>
+              <option value="Interpretive design">Interpretive design</option>
+           </select>
+            <select ng-model="services2">
+              <option value="Wayfinding systems">Wayfinding systems</option>
+              <option value="Digital signage systems">Digital signage systems</option>
+              <option value="Wide format printing">Wide format printing</option>
+              <option value="Signage fabrication">Signage fabrication</option>
+            </select>
+            <select ng-model="services3">
+              <option value="Signage installation">Signage installation</option>
+              <option value="Print management">Print management</option>
+              <option value="Exhibition design">Exhibition design</option>
+              <option value="Exhibition fabrication">Exhibition fabrication</option>
+              <option value="Production management">Production management</option>
+              <option value="Creative projects">Creative projects</option>
+            </select>
+            <select ng-model="services4">
+              <option value="Photography">Photography</option>
+              <option value="Web design">Web design</option>
+              <option value="Web development">Web development</option>
+            </select>
+            <!--<a ng-click="getDetails()">Generate User details (ph)</a>-->
+            <button ng-click="write()">Save Quote</button>
+            <button ng-click="open()">Load Quote</button>
+            <button class="addEntry"data-ng-click="genPDF()">Generate PDF</button>
+        </div>
+        
+        
+      </div>
+    </div>
+
+    <div class="itemList">
+      <div class="row">
+        <div class="large-8 columns">
+        <h3>Items</h3>
+         <p class="statusText" style="display:none;"><i>{{statusText}}</i></p>
+        <table>
+          <tr>
+            <td>Name</td>
+            <td>Hours</td>
+            <td>Cost</td>
+            <td>clone</td>
+            <td>delete</td>
+            <td>modify</td>
+          </tr>
+          <tr ng-repeat="website in websites track by $index">
+            <td>{{website.name}}</td>
+            <td>{{website.hours}}</td>
+            <td>{{website.cost | currency}}</td>
+            <td><button data-ng-click="cloneItem($index)">Clone</button></td>
+            <td><button data-ng-click="removeItem($index)">Delete</button></td>
+            <td><button data-ng-click="modify($index)">Modify</button></td>
+          </tr>
+        </table>
+      </div>
+      <div class="large-4 columns entryType">
+            <div class="entry">
+      <div class="row">
+        <h3>Entry Type</h3>
+        <select ng-change="itemGot()" ng-model="template" ng-options="t.name for t in templates">
+          <option value="">Blank</option>
+        </select>
+    </div>
+            <div ng-include="template.url"></div>
+      </div>
+      </div>
+    </div>
+
+
+    </div>
+</div>
+    <div class="pdf printThis">
+      <div class="row">
+        <div class="large-6 columns">
+          <img src="assets/JamesCalvert_new_black.png" width="184px" height="65px"/>
+        </div>
+        <div class="large-6 columns cost">
+           <ul style="list-style:none;">
+            <li><b>JAMESCALVERT.COM.AU</b><li>
+            <li>info@jamescalvert.com.au</li>
+            <li>0409 042 008</li>
+            <li><br></li>
+            <li>42 St Johns Street,</li>
+            <li>Launceston, Tasmania 7250</li>
+          </ul>
+        </div>
+
+      </div>
+      <div>
+        <h4>{{qOrg}}</h4>
+        <p>{{qName}} Quote ID: {{qID}}</p>
+        <p>{{qDate | date : 'longDate'}}</p>
+      </div>
+
+      <div class="row" ng-repeat="website in websites track by $index">
+        <div class="row">
+        <div class="large-6 columns">
+          <h4>{{website.name}}</h4>
+        </div>
+        <div class="large-6 columns cost">
+          <h4>{{website.cost | currency}} excluding GST</h4>
+        </div>
+      </div>
+        <div class="row description">
+          <div class="large-12 columns">
+            <p ng-bind="getSpecs(website)"></p>
+            <p>{{website.message}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="summary row">
+        <div class="large-6 columns">
+        <h4>Other services we offer:</h4>
+        <p>{{services1}}</p>
+        <p>{{services2}}</p>
+        <p>{{services3}}</p>
+        <p>{{services4}}</p>
+        </div>
+        <div class="large-6 columns">
+        <ul>
+          <li><h5>Total</h5><li>
+          <li>Sub total: {{totalCost | currency}}</li>
+          <li>GST: {{((totalCost)*10/100) | currency}}</li>
+          <li>Total (incl GST): {{(((totalCost)*10/100) + totalCost) | currency}}</li>
+        </ul>
+      </div>
+      </div>
+      <div class="footer row">
+        <div class="large-6 columns">
+        </div>
+        <div class="large-6 columns cost">
+          <br>
+        </div>
+      </div>
+      <footer>
+
+     <p><small>&copy; Copyright 2015 J Calvert Pty Ltd. All rights reserved. This quote is valid for 30 days. </small></p>
+
+</footer>
+
+
+
+  </div>
+
+
+
+

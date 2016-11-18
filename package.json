@@ -1,0 +1,24 @@
+{
+  "name": "quotegen",
+  "version": "0.2.1",
+  "description": "A web app that allows you to generate quotes and then either print or create a PDF",
+  "main": "gulp.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://cameron_fry@bitbucket.org/cameron_fry/quotegen.git"
+  },
+  "keywords": [
+    "quote"
+  ],
+  "author": "Cameron Fry",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/cameron_fry/quotegen#readme"
+}

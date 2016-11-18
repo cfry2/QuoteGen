@@ -1,0 +1,21 @@
+
+<div class="row">
+<h3>Website entry</h3>
+<form ng-submit="addWebsite(newWebsite)">
+<input type="text" placeholder="Website description" ng-model="newWebsite.description"/>
+<input type="text" placeholder="number of pages" ng-model="newWebsite.pages" />
+<input type="text" placeholder="design time" ng-model="newWebsite.designTime" />
+<textarea placeholder="description" ng-model="newWebsite.message"></textarea>
+
+<select ng-model="newWebsite.cms">
+	<option value="1">None</option>
+	<option value="2">Wordpress</option>
+	<option value="3">Drupal</option>
+	<option value="4">Joomla</option>
+</select>
+<button type="submit" class="addEntry">Add Entry</button>
+</form>
+<button class="modEntry" ng-click="modifyWebsite()">Modify</button>
+</div>
+
+

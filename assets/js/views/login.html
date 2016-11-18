@@ -1,0 +1,18 @@
+<div class="row" ng-controller="login">
+	<div class="large-12 columns">
+		<form>
+			<input type="text" placeholder="Email" ng-model="login.username"/>
+			<input type="password" placeholder="Password" ng-model="login.password" />
+			<div class="row">
+				<div class="large-6 columns">
+					<!--<button href="#dash" >Log in</button>-->
+					<a href="#/" ng-click="login()" >Log in</a>
+					<p id="status">{{statusText}}</p>
+				</div>
+				<div class="large-6 columns">
+					<!--<button ng-click="logout()">Register</button>-->
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

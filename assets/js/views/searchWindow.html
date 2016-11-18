@@ -1,0 +1,15 @@
+    <h3>List of qoutes</h3>
+
+       <div class="row">
+            <div class="medium-12 columns">
+                <p ng-repeat="qoutesID in qoutesIDs track by $index"><a ng-click="select($index)">{{qoutesID}}</a></p>
+            </div>
+        </div>
+        <div class="row">
+        <div class="medium-3 columns">
+            Load {{selected}}?
+        </div>
+        <div class="medium-9 columns">
+            <button class="button" ng-click="ok()">OK</button>
+        </div>
+    <a class="close-reveal-modal" ng-click="cancel()">&#215;</a>
